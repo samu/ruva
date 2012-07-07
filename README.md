@@ -31,15 +31,15 @@ greater than or equal to 18).
 
 Everything indented beneath an `any` is evaluated as we know it from an `or` expression (||).
 
-  -> Any of the following expressions must match.
+    "Any of the following expressions must match."
   
 Everything indented beneath an `all` is evaluated as we know it from an `and` expression (&&).
 
-  -> All of the following expressions must matach.
+    "All of the following expressions must matach."
   
-Everything indented beneath an `none` is evaluated as we know it from an `not` expression (!).
+Everything indented beneath an `none` is evaluated as we know it from a `not` expression (!).
 
-  -> None of the following expressions must match
+    "None of the following expressions may match"
 
 You can nest as many of the above conditions as you want.
 
