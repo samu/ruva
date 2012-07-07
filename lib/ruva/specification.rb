@@ -1,0 +1,1 @@
+require 'ruva/specification/specification'
