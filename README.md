@@ -29,6 +29,15 @@ This expression says that (`name` of `person` matches /samuel/) __or__ that (`ci
 matches /zurich/ __and__ `profession` matches /application engineer/ __and__ `age` is 
 greater than or equal to 18).
 
+Everything indented beneath an `any` is evaluated as we now it from an `or` expression (||).
+  -> Any of the following expressions must match.
+Everything indented beneath an `all` is evaluated as we now it from an `and` expression (&&).
+  -> All of the following expressions must matach.
+Everything indented beneath an `none` is evaluated as we now it from an `not` expression (!).
+  -> None of the following expressions must match
+
+You can nest as many of the above conditions as you want.
+
 
 ## How
 
