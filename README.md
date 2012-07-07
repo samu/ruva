@@ -25,21 +25,21 @@ You can also define more complex conditions:
         profession matches /application engineer/
         age is greater than or equal to 18      
         
-This expression says that (`name` of `person` matches /samuel/) __or__ that (`city` 
-matches /zurich/ __and__ `profession` matches /application engineer/ __and__ `age` is 
-greater than or equal to 18).
+This expression says that (`name` of `person` must match /samuel/) __or__ that (`city` 
+must match /zurich/ __and__ `profession` must match /application engineer/ __and__ `age` must  
+be greater than or equal to 18).
 
 Everything indented beneath an `any` is evaluated as we know it from an `or` expression (||).
 
-    "Any of the following expressions must match."
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Any of the following expressions must match."
   
 Everything indented beneath an `all` is evaluated as we know it from an `and` expression (&&).
 
-    "All of the following expressions must matach."
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "All of the following expressions must match."
   
-Everything indented beneath an `none` is evaluated as we know it from a `not` expression (!).
+Everything indented beneath a `none` is evaluated as we know it from a `not` expression (!).
 
-    "None of the following expressions may match"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "None of the following expressions may match"
 
 You can nest as many of the above conditions as you want.
 
