@@ -26,7 +26,7 @@ You can also define more complex conditions:
         age is greater than or equal to 18      
         
 This expression says that (`name` of `person` matches /samuel/) __or__ that (`city` 
-matches /zurich/ __and__ `profession matches /application engineer/ __and__ `age` is 
+matches /zurich/ __and__ `profession` matches /application engineer/ __and__ `age` is 
 greater than or equal to 18).
 
 
