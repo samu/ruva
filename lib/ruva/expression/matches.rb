@@ -3,7 +3,7 @@ def create_matches_spec identifier, comparable
   regex = comparable.is_a?(Regexp) ? comparable : Regexp.new(comparable)
   spec = ExpressionLeafSpec.new(identifier.value, regex)
   spec.set_validator { |value, *args|
-    @comparable =~ value
+    (@comparable =~ value) != nil
   }
   spec.set_reporting { |satisfied, value, *args|
     comparable_string = "/#{@comparable.source}/"
