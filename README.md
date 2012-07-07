@@ -1,6 +1,24 @@
 # Ruva
 
-TODO: Write a gem description
+## What
+
+Ruva (_ru_by e_va_luation) is a simple utility to describe conditions in a human readable manner.
+
+Assume you have an object called `person` with an attribute `age = 23`. 
+
+    person = OpenStruct.new
+    person.age = 23
+
+You write 
+
+    spec = RuvaExpression.parse "age is 23"
+    result = spec.evaluate person 
+
+and find out that your condition is `true`!
+
+## How
+
+
 
 ## Installation
 
