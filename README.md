@@ -2,7 +2,7 @@
 
 ## What
 
-Ruva (_ru_by e_va_luation) is a simple utility to describe conditions in a human readable manner.
+Ruva (_ru_ by e _va_ luation) is a simple utility to describe conditions in a human readable manner.
 
 Assume you have an object called `person` with an attribute `age = 23`. 
 
