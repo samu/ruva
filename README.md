@@ -2,9 +2,9 @@
 
 ## What
 
-Ruva (_ru_ by e _va_ luation) is a simple utility to describe conditions in a human readable manner.
+Ruva is a simple utility to describe conditions in a human readable manner.
 
-Assume you have an object called `person` with an attribute `age = 23`. 
+Assume you have an object called `person` with an attribute `age = 23`:
 
     person = OpenStruct.new
     person.age = 23
@@ -12,9 +12,23 @@ Assume you have an object called `person` with an attribute `age = 23`.
 You write 
 
     spec = RuvaExpression.parse "age is 23"
-    result = spec.evaluate person 
+    condition = spec.evaluate person 
 
 and find out that your condition is `true`!
+
+You can also define more complex conditions:
+
+    any
+      name matches samuel
+      all
+        city matches zurich
+        profession matches /application engineer/
+        age is greater than or equal to 18      
+        
+This expression says that (`name` of `person` matches /samuel/) __or__ that (`city` 
+matches /zurich/ __and__ `profession matches /application engineer/ __and__ `age` is 
+greater than or equal to 18).
+
 
 ## How
 
