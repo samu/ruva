@@ -80,11 +80,6 @@ At this point, ruva loads the condition into some kind of hirarchy, according to
 
 ## Expressions
 
-Expression                                              | Numerics | Strings  | Dates    | Booleans
-------------------------------------------------------- | -------- | -------- | -------- | --------
-`identifier is comparable`                              | yes      | yes      | yes      | true
-
-
 
 
 
