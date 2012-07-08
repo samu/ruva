@@ -80,9 +80,16 @@ At this point, ruva loads the condition into some kind of hirarchy, according to
 
 ## Expressions
 
+#### `identifier is comparable (or comparable)`
 
+    age is 20
+    name is lisa or simon or samuel
+    dob is 19.3.1989
+    
+#### `identifier matches comparable (or/and comparable)`    
 
-
+    city matches zurich
+    city matches /new york/
 
 
 
