@@ -1,0 +1,7 @@
+all
+  age is 23
+  name matches samuel
+  profession matches /application engineer/
+  any
+    city matches zurich
+    hobby matches guitar

@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Ruva::VERSION
   
   gem.add_dependency "citrus", "~> 2.4.1"
+  gem.add_dependency "indentation-parser"
   
   gem.add_development_dependency "rspec", "~> 2.6"
 end

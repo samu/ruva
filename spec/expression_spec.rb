@@ -5,7 +5,7 @@ RSpec.configure do |c|
   c.include ExpressionHelper
 end
 
-describe "Ruva::Expression" do
+describe Ruva do
   
   before :all do 
     

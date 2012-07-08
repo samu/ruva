@@ -1,34 +1,39 @@
-require 'indentation-interpreter'
+require 'indentation-parser'
 
 require "ruva/version"
 require "ruva/expression"
 
 module Ruva
-  def self.read text
-    parser = IndentationInterpreter.new do |p|
-      
-      p.on /^all$/ do |node| 
-        node.set_value AndSpec.new
-        node.parent.value.append node.value
+  def self.read file
+    interpret IO.read("#{file}.ruva")
+  end
+  
+  def self.interpret text
+    parser = IndentationParser.new do |p|
+      p.on /^all$/ do |parent, indentation, source, captures| 
+        node = AndSpec.new
+        parent.append node
+        node
       end
       
-      p.on /^any$/ do |node| 
-        node.set_value OrSpec.new
-        node.parent.value.append node.value
+      p.on /^any$/ do |parent, indentation, source, captures| 
+        node = OrSpec.new
+        parent.append node
+        node
       end
       
-      p.on /^none$/ do |node| 
-        node.set_value OrSpec.new
-        node.parent.value.append node.value
+      p.on /^none$/ do |parent, indentation, source, captures| 
+        node = NotSpec.new
+        parent.append node
+        node
       end
       
-      p.else do |node|
-        node.set_value RuvaExpression.parse(node.source)
-        node.parent.value.append node.value
+      p.else do |parent, indentation, source|
+        node = RuvaExpression.parse(source)
+        parent.append node
+        node
       end
-      
     end
-    
     spec = parser.read(text, AndSpec.new)
     spec.value
   end
