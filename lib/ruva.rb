@@ -3,12 +3,24 @@ require 'indentation-parser'
 require "ruva/version"
 require "ruva/expression"
 
+class Object
+  def if condition
+    raise unless block_given?
+    spec = Ruva.interpret(Ruva.normalize_indentation condition)
+    result = spec.evaluate self
+    yield if result.satisfied
+    Ruva::Else.new result.satisfied
+  end
+end
+
 module Ruva
+
   def self.read file
     interpret IO.read("#{file}.ruva")
   end
   
   def self.interpret text
+    
     parser = IndentationParser.new do |p|
       p.on /^all$/ do |parent, indentation, source, captures| 
         node = AndSpec.new
@@ -34,7 +46,28 @@ module Ruva
         node
       end
     end
+    
     spec = parser.read(text, AndSpec.new)
     spec.value
+  end
+  
+  def self.normalize_indentation str
+    if str.index(/^[ ]*$\n/) == 0
+      str.sub!(/^[ ]*$\n/, "")
+    end
+    captures = /^\A([ ]*)/.match str
+    first_indentation = captures[1]
+    str.gsub!(/^#{first_indentation}/, "")
+    str
+  end
+  
+  class Else
+    def initialize satisfied
+      @satisfied = satisfied
+    end
+    def else 
+      raise unless block_given?
+      yield unless @satisfied
+    end
   end
 end

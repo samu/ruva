@@ -3,7 +3,8 @@ require 'ostruct'
 
 describe Ruva do
   it "reads .ruva files" do
-    spec = Ruva.read "spec/simple_condition"
+    
+    spec = Ruva.read "spec/conditions/simple_condition"
     
     input = OpenStruct.new
     input.age = 23
@@ -14,6 +15,6 @@ describe Ruva do
     result = spec.evaluate(input)
     
     result.satisfied.should be true
-    puts result
+    #puts result
   end
 end

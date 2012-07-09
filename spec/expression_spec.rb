@@ -1,5 +1,5 @@
 require 'ruva/expression'
-require 'expression_helper'
+require 'helpers/expression_helper'
 
 RSpec.configure do |c|
   c.include ExpressionHelper
