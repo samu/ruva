@@ -1,8 +1,6 @@
+##### Gwen Stefani would say: under construction!
+
 # Ruva
-
-Gwen Stefani would say: under construction!
-
-# What?
 
 Ruva is a simple utility to write conditions in a human readable manner.
 
@@ -26,12 +24,12 @@ You can also define more complex conditions:
         profession matches /application engineer/
         age is greater than or equal to 18      
 
-The according ruby syntax would look something like this:
+In plain ruby, the above condition translates to
 
     (person.name =~ /samuel/) ||
     (person.city =~ /zurich/ && person.profession =~ /application engineer/ && person.age >= 18)
 
-# How?
+# Details
 
 ## Inline definition
 
