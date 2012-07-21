@@ -39,17 +39,31 @@ In plain ruby, the above condition translates to
 
 ## Inline definition
 
+### One liners
+
 As in the example above you can define a short condition on one line:
 
 ```ruby
 person.if "name matches daniel or jonas" do
+  stuff
+end
+```
+
+You can also define an else statement:
+
+```ruby
+person.if("name matches daniel or jonas") do
   stuff
 end.else do
   other_stuff
 end
 ```
 
-You can also define larger conditions:
+Note that you have to put the condition into brackets in this case.
+
+### Multiline
+
+You may define larger conditions like this:
 
 ```ruby
 person.if "
@@ -111,7 +125,7 @@ Acts the same as [`between?`](http://www.ruby-doc.org/core-1.9.3/Comparable.html
     age is greater than or equal to 18
     age is less than or equal to 18
 
--acts tge sane as the `<, >, <=, >=` operators
+Acts the same as the `<, >, <=, >=` operators
 
 #### matches
 
@@ -120,3 +134,9 @@ Acts the same as [`between?`](http://www.ruby-doc.org/core-1.9.3/Comparable.html
 
 Acts the same as the `=~` operator.
 
+#### or / and
+
+You can use `ors` and `ands` where it makes sense. For Example:
+
+    name matches lisa or simon or samuel
+    city matches z and u and r
