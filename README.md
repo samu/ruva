@@ -1,6 +1,7 @@
-##### Gwen Stefani would say: under construction!
-
 # Ruva
+
+[![Build Status](https://secure.travis-ci.org/ssmm/ruva.png)](http://travis-ci.org/ssmm/ruva) 
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/ssmm/ruva)
 
 Ruva is a simple utility to write conditions in a human readable manner.
 
@@ -93,7 +94,7 @@ You can define the same condition in a file with ".ruva" as extension:
 Then you load it:
 
 ```ruby
-condition = Ruva.read "your_condition.ruva"
+condition = Ruva.read "your_condition"
 ```
 
 At this point, ruva loads the condition into some kind of hirarchy, according to the 
