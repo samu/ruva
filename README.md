@@ -6,14 +6,18 @@ Ruva is a simple utility to write conditions in a human readable manner.
 
 Assume you have an object called `person` with an attribute `age = 23`:
 
-    person = OpenStruct.new
-    person.age = 23
+```ruby
+person = OpenStruct.new
+person.age = 23
+```
 
 You write 
 
-	person.if "age is 23" do 
-	  stuff
-	end
+```ruby
+person.if "age is 23" do 
+  stuff
+end
+```
 
 You can also define more complex conditions:
 
@@ -26,8 +30,10 @@ You can also define more complex conditions:
 
 In plain ruby, the above condition translates to
 
-    (person.name =~ /samuel/) ||
-    (person.city =~ /zurich/ && person.profession =~ /application engineer/ && person.age >= 18)
+```ruby
+(person.name =~ /samuel/) ||
+(person.city =~ /zurich/ && person.profession =~ /application engineer/ && person.age >= 18)
+```
 
 # Details
 
@@ -35,22 +41,26 @@ In plain ruby, the above condition translates to
 
 As in the example above you can define a short condition on one line:
 
-    person.if "name matches daniel or jonas" do
-      stuff
-    end.else do
-      other_stuff
-    end
+```ruby
+person.if "name matches daniel or jonas" do
+  stuff
+end.else do
+  other_stuff
+end
+```
 
 You can also define larger conditions:
 
-    person.if "
-      any
-        name matches lisa or simon or samuel
-        age is between 18 and 28
-        city matches zurich or /st. gallen/
-    " do
-      stuff
-    end
+```ruby
+person.if "
+  any
+    name matches lisa or simon or samuel
+    age is between 18 and 28
+    city matches zurich or /st. gallen/
+" do
+  stuff
+end
+```
 
 The above definition says, that the condition is met if any of the three conditions defined under the 
 `any` keyword meet.
@@ -68,42 +78,45 @@ You can define the same condition in a file with ".ruva" as extension:
 
 Then you load it:
 
-    condition = Ruva.read "your_condition.ruva"
+```ruby
+condition = Ruva.read "your_condition.ruva"
+```
 
 At this point, ruva loads the condition into some kind of hirarchy, according to the 
 [Specification pattern](http://en.wikipedia.org/wiki/Specification_pattern), and you can invoke its 
 `evaluate` method to test any object you want against that condition:
 
-    result = condition.evaluate(your_input)
+```ruby
+result = condition.evaluate(your_input)
+```
 
 ## Expressions
 
-#### `identifier is comparable (or comparable)`
+#### is
 
     age is 20
-    name is lisa or simon or samuel
-    dob is 19.3.1989
-    
-#### `identifier matches comparable (or/and comparable)`    
+
+Acts the same as the `==` operator.
+
+#### is between
+
+    age is between 20 and 30
+
+Acts the same as [`between?`](http://www.ruby-doc.org/core-1.9.3/Comparable.html#method-i-between-3F).
+
+#### is greater than (or equal to) / is less than (or equal to)
+
+    age is greater than 18
+    age is less than 18
+    age is greater than or equal to 18
+    age is less than or equal to 18
+
+-acts tge sane as the `<, >, <=, >=` operators
+
+#### matches
 
     city matches zurich
     city matches /new york/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Acts the same as the `=~` operator.
 

@@ -26,6 +26,14 @@ describe Ruva do
         true.should be false
       }
       executed.should be true
+
+      executed = false
+      @person.if("age is 23") do
+        executed = true
+      end.else do
+        true.should be false
+      end
+      executed.should be true
       
       executed = true
       @person.if("age is 24") {
