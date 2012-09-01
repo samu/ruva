@@ -3,7 +3,7 @@
 [![Build Status](https://secure.travis-ci.org/ssmm/ruva.png)](http://travis-ci.org/ssmm/ruva) 
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/ssmm/ruva)
 
-Ruva is a simple utility to write conditions in a human readable manner.
+A library to write plain text conditions.
 
 Assume you have an object called `person` with an attribute `age = 23`:
 
@@ -27,7 +27,7 @@ You can also define more complex conditions:
       all
         city matches zurich
         profession matches /application engineer/
-        age is greater than or equal to 18      
+        age is greater than or equal to 18
 
 In plain ruby, the above condition translates to
 
@@ -69,9 +69,9 @@ You may define larger conditions like this:
 ```ruby
 person.if "
   any
-    name matches lisa or simon or samuel
+    name matches daniel or jonas or samuel
     age is between 18 and 28
-    city matches zurich or /st. gallen/
+    city matches zurich or /new york/
 " do
   stuff
 end
@@ -87,9 +87,9 @@ Currently supported are the keywords `all`, `any` and `none`.
 You can define the same condition in a file with ".ruva" as extension:
 
     any
-      name matches lisa or simon or samuel
+      name matches daniel or jonas or samuel
       age is between 18 and 28
-      city matches zurich or /st. gallen/
+      city matches zurich or /new york/
 
 Then you load it:
 
