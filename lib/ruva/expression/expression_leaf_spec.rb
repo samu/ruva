@@ -3,37 +3,35 @@ class ExpressionLeafSpec < LeafSpec
     if (args.size == 1)
       obj = args[0]
       if (obj.is_a? Hash)
-        get_hash_value @name.split(".").reverse, obj
-      else
-        get_object_value @name.split(".").reverse, obj
+        obj = OpenStruct.new obj
       end
+      get_object_value @name.split(".").reverse, obj
     else
       raise "Unexpected input"
     end   
   end
 
-  def get_hash_value key_array, hash
-    if (key_array.size > 1)
-      obj = hash[key_array.pop.to_sym]
-      if (obj.is_a?(Hash)) 
-        get_hash_value(key_array, obj)
-      else
-        get_object_value(key_array, obj)
-      end
-    else
-      obj = OpenStruct.new hash
-      obj.instance_eval(key_array.pop)
-    end
-  end
+  # def get_hash_value key_array, hash
+  #   if (key_array.size > 1)
+  #     obj = hash[key_array.pop.to_sym]
+  #     if (obj.is_a?(Hash)) 
+  #       get_hash_value(key_array, obj)
+  #     else
+  #       get_object_value(key_array, obj)
+  #     end
+  #   else
+  #     obj = OpenStruct.new hash
+  #     obj.instance_eval(key_array.pop)
+  #   end
+  # end
   
   def get_object_value key_array, obj
     if (key_array.size > 1)
-      obj = obj.send key_array.pop
+      obj = obj.instance_eval(key_array.pop)
       if (obj.is_a?(Hash)) 
-        get_hash_value(key_array, obj)
-      else
-        get_object_value(key_array, obj)
+        obj = OpenStruct.new obj
       end
+      get_object_value(key_array, obj)      
     else
       obj.instance_eval(key_array.pop)
     end

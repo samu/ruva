@@ -9,8 +9,6 @@ describe Ruva do
 
   describe "is/between expressions" do
     it "handles numerics" do
-      test_expression "ary[0] is 10", {:ary => [10, 11, 12]}, true
-
       test_expression "age is 23", {:age => 23}, true
       test_expression "age is 23", {:age => 24}, false
       test_expression "age is 23 or 24 or 25", {:age => 24}, true
@@ -132,6 +130,26 @@ describe Ruva do
       obj.person = person
       test_expression "person.address.zip is 12345", obj, true
     end
+
+    it "handles arrays" do
+      obj = OpenStruct.new
+      obj.ary = [10, 11, 12]
+      test_expression "ary[1] is 11", obj, true
+
+      obj = OpenStruct.new
+      map = {:ary => [10, 11, 12]}
+      obj.map = map
+      test_expression "map.ary[2] is 12", obj, true
+
+      obj = OpenStruct.new
+      map = {:list => [
+        {:first => 1},
+        {:second => 2},
+        {:third => 3}
+      ]}
+      obj.map = map
+      puts obj
+      test_expression "map.list[1].second is 2", obj, true
+    end
   end
-  
 end
