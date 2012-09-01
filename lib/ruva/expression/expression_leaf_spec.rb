@@ -11,7 +11,7 @@ class ExpressionLeafSpec < LeafSpec
       raise "Unexpected input"
     end   
   end
-  
+
   def get_hash_value key_array, hash
     if (key_array.size > 1)
       obj = hash[key_array.pop.to_sym]
@@ -21,7 +21,8 @@ class ExpressionLeafSpec < LeafSpec
         get_object_value(key_array, obj)
       end
     else
-      hash[key_array.pop.to_sym]
+      obj = OpenStruct.new hash
+      obj.instance_eval(key_array.pop)
     end
   end
   
@@ -34,7 +35,7 @@ class ExpressionLeafSpec < LeafSpec
         get_object_value(key_array, obj)
       end
     else
-      obj.send key_array.pop
+      obj.instance_eval(key_array.pop)
     end
   end
   

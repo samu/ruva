@@ -70,8 +70,8 @@ grammar RuvaExpression
 		'or' space
 	end		
 		
-  	rule identifier
-		([a-zA-Z.]+ space) <Identifier>
+	rule identifier
+		([a-zA-Z0-9_.\[\]]+ space) <Identifier>
 	end
 
 	rule comparable

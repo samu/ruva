@@ -9,6 +9,8 @@ describe Ruva do
 
   describe "is/between expressions" do
     it "handles numerics" do
+      test_expression "ary[0] is 10", {:ary => [10, 11, 12]}, true
+
       test_expression "age is 23", {:age => 23}, true
       test_expression "age is 23", {:age => 24}, false
       test_expression "age is 23 or 24 or 25", {:age => 24}, true
@@ -34,7 +36,9 @@ describe Ruva do
     end
 
     it "handles dates" do
-      #TODO!
+      test_expression "date is 02.02.2002", {:date => Date.parse("2.2.2002")}, true
+      test_expression "date is between 01.01.2000 and 31.12.2000", {:date => Date.parse("1.7.2000")}, true
+      test_expression "date is between 01.01.2000 and 31.12.2000", {:date => Date.parse("1.7.2001")}, false
     end
   end
 
@@ -76,7 +80,17 @@ describe Ruva do
     end
     
     it "handes dates" do
-      #TODO!
+      test_expression "date is greater than 01.01.2011", {:date => Date.parse("1.1.2012")}, true
+      test_expression "date is greater than 01.01.2011", {:date => Date.parse("1.1.2010")}, false
+
+      test_expression "date is less than 01.01.2011", {:date => Date.parse("1.1.2010")}, true
+      test_expression "date is less than 01.01.2011", {:date => Date.parse("1.1.2012")}, false
+
+      test_expression "date is greater than or equal to 01.01.2011", {:date => Date.parse("1.1.2012")}, true
+      test_expression "date is greater than or equal to 01.01.2011", {:date => Date.parse("1.1.2010")}, false
+
+      test_expression "date is less than or equal to 01.01.2011", {:date => Date.parse("1.1.2010")}, true
+      test_expression "date is less than or equal to 01.01.2011", {:date => Date.parse("1.1.2012")}, false
     end
   end
   
