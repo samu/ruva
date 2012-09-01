@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
 
   gem.authors       = ["Samuel Mueller"]
   gem.email         = ["mueller.samu@gmail.com"]
-  gem.description   = %q{Ruva is a simple utility to write conditions in a human readable manner.}
+  gem.description   = %q{A library to write plain text conditions.}
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/ssmm/ruva"
 
