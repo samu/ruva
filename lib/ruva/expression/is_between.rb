@@ -38,7 +38,11 @@ module IsBetween
     comparables = [from.value, to.value]
     spec = ExpressionLeafSpec.new(identifier.value, comparables) 
     spec.set_validator { |value, *args|
-      value.between? @comparable[0], @comparable[1]      
+      if value
+        value.between? @comparable[0], @comparable[1]
+      else
+        false
+      end
     }
     spec.set_reporting { |satisfied, value, *args|
       comparable_string = "#{@comparable[0]} and #{@comparable[1]}" 

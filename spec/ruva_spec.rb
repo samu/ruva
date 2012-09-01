@@ -12,9 +12,8 @@ describe Ruva do
     input.profession = "application engineer"
     input.city = "zurich"
     
-    result = spec.evaluate(input)
+    result = spec.evaluate input
     
-    result.satisfied.should be true
-    #puts result
+    result.should be true
   end
 end

@@ -18,18 +18,28 @@ class Spec
     end
   end
   
+  def report satisfied, *args
+    # report = SpecReport.new false, name
+    # @specs.each do |spec|
+    #   subreport = create_subreport spec, *args
+    #   report.add_subreport subreport
+    #   if condition_change? subreport.satisfied
+    #     passed = !initial_condition
+    #   end
+    # end
+    # report.satisfied = passed
+    # report
+  end
+
   def evaluate *args
     passed = initial_condition
-    report = SpecReport.new false, name
     @specs.each do |spec|
-      subreport = create_subreport spec, *args
-      report.add_subreport subreport
-      if condition_change? subreport.satisfied
+      result = spec.evaluate *args
+      if condition_change? result
         passed = !initial_condition
       end
     end
-    report.satisfied = passed
-    report
+    passed
   end
 end
 

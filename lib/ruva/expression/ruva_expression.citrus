@@ -17,6 +17,10 @@ grammar RuvaExpression
 		|
 		(identifier is less than comparable) <Less>
 		|
+		(identifier is comparable or more) <GreaterOrEqual>
+		|
+		(identifier is comparable or less) <LessOrEqual>
+		|
 		(identifier is comparables:(or_comparables)) <OrIs>
 		|
 		(identifier is comparable) <Is>
@@ -41,7 +45,11 @@ grammar RuvaExpression
 	rule less
 		'less' space
 	end
-		
+	
+	rule more
+		'more' space
+	end
+
 	rule than
 		'than' space
 	end

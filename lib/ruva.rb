@@ -8,8 +8,8 @@ class Object
     raise unless block_given?
     spec = Ruva.interpret(Ruva.normalize_indentation condition)
     result = spec.evaluate self
-    yield if result.satisfied
-    Ruva::Else.new result.satisfied
+    yield if result
+    Ruva::Else.new result
   end
 end
 
