@@ -98,5 +98,26 @@ describe Ruva do
       test_expression "name matches /regex\\/with escaping/", {:name => "regex/with escaping"}, true
     end
   end
+
+  describe "misc functions" do
+    it "handles deep attributes" do
+      obj = {
+        :person => {
+          :address => {
+            :zip => 12345
+          }
+        }
+      }
+      test_expression "person.address.zip is 12345", obj, true
+
+      obj = OpenStruct.new
+      person = OpenStruct.new
+      person.address = {
+        :zip => 12345
+      }
+      obj.person = person
+      test_expression "person.address.zip is 12345", obj, true
+    end
+  end
   
 end

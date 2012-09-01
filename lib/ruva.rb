@@ -60,6 +60,18 @@ module Ruva
     str.gsub!(/^#{first_indentation}/, "")
     str
   end
+
+  def self.hash_to_ostruct hash
+    ostruct = OpenStruct.new
+    hash.each do |key, value|
+      if value.is_a? Hash
+        ostruct.send("#{key}=", hash_to_ostruct(value))
+      else
+        ostruct.send("#{key}=", value)
+      end
+    end
+    ostruct
+  end
   
   class Else
     def initialize satisfied
