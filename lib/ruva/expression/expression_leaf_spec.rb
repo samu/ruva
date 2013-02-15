@@ -1,6 +1,10 @@
 module Ruva
   module Expression
-    class LeafSpec
+    class ExpressionLeafSpec
+      def get_value value
+        Ruva::Util::DeepCall.init_deep_call(@name, value)
+      end
+
       def initialize name, args
         @name = name
         @comparable = args
@@ -21,12 +25,6 @@ module Ruva
       # def report satisfied, *args
       #   instance_exec(satisfied, get_value(*args), *args, &@reporting)
       # end
-    end
-
-    class ExpressionLeafSpec < LeafSpec
-      def get_value value
-        Ruva::Util::DeepCall.init_deep_call(@name, value)
-      end
 
       # def create_typed_value value
       #   case value
