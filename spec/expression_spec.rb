@@ -1,4 +1,4 @@
-require 'ruva/expression'
+require 'ruva'
 require 'helpers/expression_helper'
 
 RSpec.configure do |c|
