@@ -1,6 +1,6 @@
 # Ruva
 
-[![Build Status](https://secure.travis-ci.org/ssmm/ruva.png)](http://travis-ci.org/ssmm/ruva) 
+[![Build Status](https://secure.travis-ci.org/ssmm/ruva.png)](http://travis-ci.org/ssmm/ruva)
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/ssmm/ruva)
 
 A library to write plain text conditions.
@@ -12,10 +12,10 @@ person = OpenStruct.new
 person.age = 23
 ```
 
-You write 
+You write
 
 ```ruby
-person.if "age is 23" do 
+person.if "age is 23" do
   stuff
 end
 ```
@@ -77,7 +77,7 @@ person.if "
 end
 ```
 
-The above definition says, that the condition is met if any of the three conditions defined under the 
+The above definition says, that the condition is met if any of the three conditions defined under the
 `any` keyword meet.
 
 Currently supported are the keywords `all`, `any` and `none`.
@@ -97,8 +97,8 @@ Then you load it:
 condition = Ruva.read "your_condition"
 ```
 
-At this point, ruva loads the condition into some kind of hirarchy, according to the 
-[Specification pattern](http://en.wikipedia.org/wiki/Specification_pattern), and you can invoke its 
+At this point, ruva loads the condition into some kind of hirarchy, according to the
+[Specification pattern](http://en.wikipedia.org/wiki/Specification_pattern), and you can invoke its
 `evaluate` method to test any object you want against that condition:
 
 ```ruby

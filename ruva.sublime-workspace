@@ -23,13 +23,145 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/C/Program Files (x86)/Sublime Text 2/Data/Packages/User/Package Control.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 309,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/ruva.rb",
+			"settings":
+			{
+				"buffer_size": 1697,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 89,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ruva.gemspec",
+			"settings":
+			{
+				"buffer_size": 796,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 375.0,
 		"selected_items":
 		[
+			[
+				"package re",
+				"Package Control: Remove Package"
+			],
+			[
+				"package insta",
+				"Package Control: Install Package"
+			],
+			[
+				"togsi",
+				"View: Toggle Side Bar"
+			],
+			[
+				"togside",
+				"View: Toggle Side Bar"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta ",
+				"Package Control: Install Package"
+			],
+			[
+				"gist ",
+				"Gist: Open Gist"
+			],
+			[
+				"gist",
+				"Gist: Open Gist"
+			],
+			[
+				"gist  delete",
+				"Gist: Delete Gist"
+			],
+			[
+				"create gist",
+				"Gist: Create Private Gist"
+			],
+			[
+				"gist create",
+				"Gist: Create Private Gist"
+			],
+			[
+				"insta a",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Markdown Preview: preview in Browser"
+			],
+			[
+				"insta pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package con",
+				"Package Control: Remove Package"
+			],
+			[
+				"pand",
+				"Pandoc: Render Markdown to temp HTML and View"
+			],
+			[
+				"synta markdo",
+				"Set Syntax: Markdown"
+			],
+			[
+				"markdown",
+				"Pandoc: Render Markdown to HTML"
+			],
+			[
+				"synta md",
+				"Set Syntax: Markdown"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"install pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package con add ch",
+				"Package Control: Add Channel"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Channel"
+			],
+			[
+				"package install ",
+				"Package Control: Install Package"
+			],
 			[
 				"side",
 				"View: Toggle Open Files in Side Bar"
@@ -59,19 +191,15 @@
 				"Project: Add Folder"
 			],
 			[
-				"togside",
-				"View: Toggle Side Bar"
-			],
-			[
 				"tog mini",
 				"View: Toggle Minimap"
 			]
 		],
-		"width": 392.0
+		"width": 458.0
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 411.0
 	},
 	"distraction_free":
 	{
@@ -84,7 +212,21 @@
 	},
 	"file_history":
 	[
+		"/C/UBS/dev/private/ruva/lib/ruva/expression/identifier_comparable.rb",
+		"/C/UBS/dev/private/ruva/lib/ruva/expression/ruva_expression.citrus",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/User/Preferences.sublime-settings",
+		"/C/UBS/dev/private/ruva/lib/ruva.rb",
+		"/C/UBS/dev/private/ruva/lib/ruva/specification/specification.rb",
+		"/C/UBS/dev/private/ruva/lib/ruva/expression/equal_greater_less.rb",
+		"/C/UBS/dev/private/ruva/lib/ruva/expression/expression_leaf_spec.rb",
+		"/C/UBS/dev/private/ruva/README.md",
 		"/Z/DEVELOPMENT/swload/rubydev/Vagrant/setup_proxy.rb",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/User/Gist.sublime-settings",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/Default/Preferences.sublime-settings",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/Gist/Gist.sublime-settings",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/SmartMarkdown/SmartMarkdown.sublime-settings",
+		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/SmartMarkdown/Default.sublime-keymap",
+		"/C/UBS/dev/private/movieman/Gemfile",
 		"/C/UBS/dev/at3gebweb/pkgSource/rails_cimnet/Gemfile",
 		"/C/UBS/dev/at3gebweb/pkgSource/rails_cimnet/app/helpers/application_helper.rb",
 		"/C/UBS/dev/at3gebweb/pkgSource/rails_cimnet/spec/controllers/multilang_fallback_spec.rb",
@@ -127,9 +269,7 @@
 		"/C/UBS/dev/at3gebweb/pkgSource/rails_cimnet/test/functional/cimnet_mailer_test.rb",
 		"/C/UBS/dev/at3gebweb/pkgSource/rails_cimnet/config/environments/development.rb",
 		"/C/UBS/dev/at3gebweb/pkgSource/rails_cimnet/test/functional/json_output_test.rb",
-		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/Default/Preferences.sublime-settings",
 		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Program Files (x86)/Sublime Text 2/Data/Packages/User/Preferences.sublime-settings",
 		"/P/Documents/Keep/PowerOfAttorneyPresentation/config/application.rb",
 		"/P/Documents/Keep/PowerOfAttorneyPresentation/config/environments/development.rb",
 		"/P/Documents/Keep/PowerOfAttorneyPresentation/app/views/jurisdictions/index.haml",
@@ -270,13 +410,119 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/C/Program Files (x86)/Sublime Text 2/Data/Packages/User/Package Control.sublime-settings",
+					"settings":
+					{
+						"buffer_size": 309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 1,
+					"file": "lib/ruva.rb",
+					"settings":
+					{
+						"buffer_size": 1697,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								561,
+								561
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 89,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ruva.gemspec",
+					"settings":
+					{
+						"buffer_size": 796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -286,7 +532,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"layout":
 	{
@@ -308,7 +554,7 @@
 		"cols":
 		[
 			0.0,
-			0.6,
+			0.4,
 			1.0
 		],
 		"rows":
@@ -328,6 +574,58 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"gesp",
+				"ruva.gemspec"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"ruva",
+				"lib/ruva.rb"
+			],
+			[
+				"citrus",
+				"lib/ruva/expression/ruva_expression.citrus"
+			],
+			[
+				"ruva/expresrb",
+				"lib/ruva/expression/identifier_comparable.rb"
+			],
+			[
+				"expre/rb",
+				"lib/ruva/expression/expression_leaf_spec.rb"
+			],
+			[
+				"ruva/expressionrb",
+				"lib/ruva/expression/equal_greater_less.rb"
+			],
+			[
+				"specification",
+				"lib/ruva/specification/specification.rb"
+			],
+			[
+				".rb",
+				"lib/ruva/specification/specification.rb"
+			],
+			[
+				".md",
+				"README.md"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"ruva.rb",
+				"lib/ruva.rb"
+			],
+			[
+				"ruv",
+				"lib/ruva.rb"
+			],
 			[
 				"spec.rb",
 				"pkgSource/rails_cimnet/spec/controllers/multilang_fallback_spec.rb"
@@ -495,10 +793,6 @@
 			[
 				"routes",
 				"pkgSource/rails_cimnet/config/routes.rb"
-			],
-			[
-				"gem",
-				"pkgSource/rails_cimnet/Gemfile"
 			],
 			[
 				"database",
@@ -791,38 +1085,6 @@
 			[
 				"see",
 				"db/seeds.rb"
-			],
-			[
-				"apphelp",
-				"app/helpers/application_helper.rb"
-			],
-			[
-				"appha",
-				"app/views/cimnet_mailer/printrequest.html.haml"
-			],
-			[
-				"app.j",
-				"app/assets/javascripts/LBi/js/app.js"
-			],
-			[
-				"sear",
-				"app/controllers/search_controller.rb"
-			],
-			[
-				"issind",
-				"app/views/issues/index.json.jbuilder"
-			],
-			[
-				"app",
-				"config/application.rb"
-			],
-			[
-				"envdev",
-				"config/environments/development.rb"
-			],
-			[
-				"jbuild",
-				"app/views/issues/show.json.jbuilder"
 			]
 		],
 		"width": 0.0

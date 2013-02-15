@@ -1,51 +1,40 @@
-class ExpressionLeafSpec < LeafSpec
-  def get_value *args
-    if (args.size == 1)
-      obj = args[0]
-      if (obj.is_a? Hash)
-        obj = OpenStruct.new obj
-      end
-      get_object_value @name.split(".").reverse, obj
-    else
-      raise "Unexpected input"
-    end   
+class LeafSpec
+  def initialize name, args
+    @name = name
+    @comparable = args
   end
 
-  # def get_hash_value key_array, hash
-  #   if (key_array.size > 1)
-  #     obj = hash[key_array.pop.to_sym]
-  #     if (obj.is_a?(Hash)) 
-  #       get_hash_value(key_array, obj)
-  #     else
-  #       get_object_value(key_array, obj)
-  #     end
-  #   else
-  #     obj = OpenStruct.new hash
-  #     obj.instance_eval(key_array.pop)
+  def set_validator &block
+    @validator = block
+  end
+
+  def set_reporting &block
+    @reporting = block
+  end
+
+  def evaluate *args
+    instance_exec(get_value(*args), *args, &@validator)
+  end
+
+  # def report satisfied, *args
+  #   instance_exec(satisfied, get_value(*args), *args, &@reporting)
+  # end
+end
+
+class ExpressionLeafSpec < LeafSpec
+  def get_value value
+    Ruva::Util::DeepCall.init_deep_call(@name, value)
+  end
+
+  # def create_typed_value value
+  #   case value
+  #     when Numeric then value
+  #     when String then "'#{value}'"
+  #     else value
   #   end
   # end
-  
-  def get_object_value key_array, obj
-    if (key_array.size > 1)
-      obj = obj.instance_eval(key_array.pop)
-      if (obj.is_a?(Hash)) 
-        obj = OpenStruct.new obj
-      end
-      get_object_value(key_array, obj)      
-    else
-      obj.instance_eval(key_array.pop)
-    end
-  end
-  
-  def create_typed_value value
-    case value
-      when Numeric then value
-      when String then "'#{value}'"
-      else value
-    end
-  end
-  
-  def create_report_string positive, negative, satisfied, value  
-    @name.to_s + " #{create_typed_value value} " + (satisfied ? positive : negative)
-  end
+
+  # def create_report_string positive, negative, satisfied, value
+  #   @name.to_s + " #{create_typed_value value} " + (satisfied ? positive : negative)
+  # end
 end
