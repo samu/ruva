@@ -1,5 +1,5 @@
 def create_is_spec identifier, comparable
-  spec = ExpressionLeafSpec.new(identifier.value, comparable.value) 
+  spec = ExpressionLeafSpec.new(identifier.value, comparable.value)
   spec.set_validator { |value, *args|
     @comparable == value
   }
@@ -29,14 +29,14 @@ end
 
 module OrIs include ManyIs
   def create_spec
-    OrSpec.new
+    Ruva::Specification::OrSpec.new
   end
 end
 
 module IsBetween
   def value
     comparables = [from.value, to.value]
-    spec = ExpressionLeafSpec.new(identifier.value, comparables) 
+    spec = ExpressionLeafSpec.new(identifier.value, comparables)
     spec.set_validator { |value, *args|
       if value
         value.between? @comparable[0], @comparable[1]
@@ -45,7 +45,7 @@ module IsBetween
       end
     }
     spec.set_reporting { |satisfied, value, *args|
-      comparable_string = "#{@comparable[0]} and #{@comparable[1]}" 
+      comparable_string = "#{@comparable[0]} and #{@comparable[1]}"
       create_report_string "is between #{comparable_string}", "is not between #{comparable_string}", satisfied, value
     }
     spec

@@ -24,19 +24,19 @@ module Ruva
 
     parser = IndentationParser.new do |p|
       p.on /^all$/ do |parent, source, captures|
-        node = AndSpec.new
+        node = Specification::AndSpec.new
         parent.append node
         node
       end
 
       p.on /^any$/ do |parent, source, captures|
-        node = OrSpec.new
+        node = Specification::OrSpec.new
         parent.append node
         node
       end
 
       p.on /^none$/ do |parent, source, captures|
-        node = NotSpec.new
+        node = Specification::NotSpec.new
         parent.append node
         node
       end
@@ -48,7 +48,7 @@ module Ruva
       end
     end
 
-    spec = parser.read(text, AndSpec.new)
+    spec = parser.read(text, Specification::AndSpec.new)
     spec.value
   end
 
