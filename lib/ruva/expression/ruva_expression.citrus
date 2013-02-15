@@ -1,51 +1,51 @@
-grammar RuvaExpression
-	
+grammar Ruva::Expression::RuvaExpression
+
 	rule root
-		(identifier matches comparables:(and_comparables)) <AndMatches>
+		(identifier matches comparables:(and_comparables)) <Ruva::Expression::AndMatches>
 		|
-		(identifier matches comparables:(or_comparables)) <OrMatches>
+		(identifier matches comparables:(or_comparables)) <Ruva::Expression::OrMatches>
 		|
-		(identifier matches comparable) <Matches>
+		(identifier matches comparable) <Ruva::Expression::Matches>
 		|
-		(identifier is between from:(comparable) and to:(comparable)) <IsBetween>
+		(identifier is between from:(comparable) and to:(comparable)) <Ruva::Expression::IsBetween>
 		|
-		(identifier is greater than or equal to comparable) <GreaterOrEqual>
+		(identifier is greater than or equal to comparable) <Ruva::Expression::GreaterOrEqual>
 		|
-		(identifier is less than or equal to comparable) <LessOrEqual>
+		(identifier is less than or equal to comparable) <Ruva::Expression::LessOrEqual>
 		|
-		(identifier is greater than comparable) <Greater>
+		(identifier is greater than comparable) <Ruva::Expression::Greater>
 		|
-		(identifier is less than comparable) <Less>
+		(identifier is less than comparable) <Ruva::Expression::Less>
 		|
-		(identifier is comparable or more) <GreaterOrEqual>
+		(identifier is comparable or more) <Ruva::Expression::GreaterOrEqual>
 		|
-		(identifier is comparable or less) <LessOrEqual>
+		(identifier is comparable or less) <Ruva::Expression::LessOrEqual>
 		|
-		(identifier is comparables:(or_comparables)) <OrIs>
+		(identifier is comparables:(or_comparables)) <Ruva::Expression::OrIs>
 		|
-		(identifier is comparable) <Is>
+		(identifier is comparable) <Ruva::Expression::Is>
 	end
 
 	rule matches
 		'matches' space
 	end
-		
+
 	rule is
 		'is' space
 	end
-	
+
 	rule between
 		'between' space
 	end
-	
+
 	rule greater
 		'greater' space
 	end
-	
+
 	rule less
 		'less' space
 	end
-	
+
 	rule more
 		'more' space
 	end
@@ -53,67 +53,67 @@ grammar RuvaExpression
 	rule than
 		'than' space
 	end
-	
+
 	rule equal
 		'equal' space
 	end
-	
+
 	rule to
 		'to' space
 	end
-		
+
 	rule and
 		'and' space
 	end
-		
+
 	rule or
 		'or' space
-	end		
-		
+	end
+
 	rule identifier
-		([a-zA-Z0-9_.\[\]]+ space) <Identifier>
+		([a-zA-Z0-9_.\[\]]+ space) <Ruva::Expression::Identifier>
 	end
 
 	rule comparable
 		(number_comparable | date_comparable | regex_comparable | text_comparable)
 	end
-	
+
 	rule last_comparable
-		(comparable '') <LastComparable>
+		(comparable '') <Ruva::Expression::LastComparable>
 	end
 
 	rule number_comparable
 		(int_comparable | float_comparable)
 	end
-	
+
 	rule int_comparable
-		([0-9]+ space) <IntComparable>
+		([0-9]+ space) <Ruva::Expression::IntComparable>
 	end
-		
+
 	rule float_comparable
-		([0-9]* '.' [0-9]+ space) <FloatComparable>
+		([0-9]* '.' [0-9]+ space) <Ruva::Expression::FloatComparable>
 	end
-	
+
 	rule date_comparable
-		([0-9]2*2 '.' [0-9]2*2 '.' [0-9]4*4 space) <DateComparable>
+		([0-9]2*2 '.' [0-9]2*2 '.' [0-9]4*4 space) <Ruva::Expression::DateComparable>
 	end
-		
+
 	rule regex_comparable
-		('/' regex:((!'/'!'\\' .) | '\\/' | '\\\\')* '/' space) <RegexComparable>
+		('/' regex:((!'/'!'\\' .) | '\\/' | '\\\\')* '/' space) <Ruva::Expression::RegexComparable>
 	end
-	
+
 	rule text_comparable
-		([^ ]+ space) <TextComparable>
+		([^ ]+ space) <Ruva::Expression::TextComparable>
 	end
 
 	rule and_comparables
-		(comparable and subresult:(and_comparables | last_comparable)) <Comparables>
+		(comparable and subresult:(and_comparables | last_comparable)) <Ruva::Expression::Comparables>
 	end
 
 	rule or_comparables
-		(comparable or subresult:(or_comparables | last_comparable)) <Comparables>
+		(comparable or subresult:(or_comparables | last_comparable)) <Ruva::Expression::Comparables>
 	end
-	
+
 	rule space
 		[ \t]+ | /$/
 	end

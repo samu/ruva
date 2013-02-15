@@ -42,7 +42,7 @@ module Ruva
       end
 
       p.else do |parent, source|
-        node = RuvaExpression.parse(source)
+        node = Ruva::Expression::RuvaExpression.parse(source)
         parent.append node
         node
       end

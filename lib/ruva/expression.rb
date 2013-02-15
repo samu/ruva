@@ -9,9 +9,9 @@ require 'ruva/expression/matches'
 
 Citrus.require 'ruva/expression/ruva_expression'
 
-module RuvaExpression
+module Ruva::Expression::RuvaExpression
   def self.parse expression
     result = super expression
-    result.value  
+    result.value
   end
 end
