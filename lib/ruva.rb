@@ -1,10 +1,25 @@
 require 'date'
+require "ruva/version"
+require "ruva/util"
+require 'ruva/specification/specification'
+require 'ruva/expression/expression_leaf_spec'
+require 'ruva/expression/equal_greater_less'
+require 'ruva/expression/identifier_comparable'
+require 'ruva/expression/is_between'
+require 'ruva/expression/matches'
 
 require 'indentation-parser'
+require 'citrus'
+require 'ostruct'
 
-require "ruva/util"
-require "ruva/version"
-require "ruva/expression"
+Citrus.require 'ruva/expression/ruva_expression'
+
+module Ruva::Expression::RuvaExpression
+  def self.parse expression
+    result = super expression
+    result.value
+  end
+end
 
 class Object
   def if condition
@@ -26,31 +41,31 @@ module Ruva
 
     parser = IndentationParser.new do |p|
       p.on /^all$/ do |parent, source, captures|
-        node = AndSpec.new
+        node = Specification::AndSpec.new
         parent.append node
         node
       end
 
       p.on /^any$/ do |parent, source, captures|
-        node = OrSpec.new
+        node = Specification::OrSpec.new
         parent.append node
         node
       end
 
       p.on /^none$/ do |parent, source, captures|
-        node = NotSpec.new
+        node = Specification::NotSpec.new
         parent.append node
         node
       end
 
       p.else do |parent, source|
-        node = RuvaExpression.parse(source)
+        node = Ruva::Expression::RuvaExpression.parse(source)
         parent.append node
         node
       end
     end
 
-    spec = parser.read(text, AndSpec.new)
+    spec = parser.read(text, Specification::AndSpec.new)
     spec.value
   end
 
