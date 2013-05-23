@@ -6,8 +6,8 @@ Gem::Specification.new do |gem|
   gem.version       = Ruva::VERSION
 
   gem.authors       = ["Samuel Mueller"]
-  gem.email         = ["mueller.samu@gmail.com"]
-  gem.description   = %q{A library to write plain text conditions.}
+  gem.email         = [""]
+  gem.description   = %q{Write plain text conditions.}
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/ssmm/ruva"
 

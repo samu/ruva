@@ -3,7 +3,7 @@
 [![Build Status](https://secure.travis-ci.org/ssmm/ruva.png)](http://travis-ci.org/ssmm/ruva)
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/ssmm/ruva)
 
-A library to write plain text conditions.
+Write plain text conditions.
 
 Assume you have an object called `person` with an attribute `age = 23`:
 
