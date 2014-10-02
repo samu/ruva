@@ -1,7 +1,7 @@
 # Ruva
 
-[![Build Status](https://secure.travis-ci.org/ssmm/ruva.png)](http://travis-ci.org/ssmm/ruva)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/ssmm/ruva)
+[![Build Status](https://secure.travis-ci.org/samu/ruva.png)](http://travis-ci.org/samu/ruva)
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/samu/ruva)
 
 Write plain text conditions.
 
